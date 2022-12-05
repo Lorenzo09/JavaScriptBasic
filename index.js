@@ -670,3 +670,569 @@ golfScore(5, 4);
 
 // Ejercicio 76 "Selecting from Many Options with Switch Statement"
 
+function caseInSwitch(val) {
+  let answer = "";
+
+switch (val){
+  case 1:
+    answer = "alpha";
+    break;
+  case 2:
+    answer = "beta";
+    break;
+  case 3: 
+    answer = "gamma";
+    break;
+  case 4:
+    answer = "delta";
+    break;  
+}
+
+  return answer;
+}
+
+caseInSwitch(1);
+
+// Ejercicio 77 "Adding a Default Option in Switch Statements"
+
+function switchOfStuff(val) {
+  let answer = "";
+
+switch (val){
+  case "a":
+    answer = "apple"
+    break;
+  case "b":
+    answer = "bird";
+    break;
+  case "c":
+    answer = "cat";
+    break;
+  default:
+    answer = "stuff";
+    break;
+}
+  return answer;
+}
+
+switchOfStuff(1);
+
+// Ejercicio 78 "Multiple Identical Options in Switch Statements"
+
+function sequentialSizes(val) {
+  let answer = "";
+
+switch(val){
+  case 1:
+  case 2:
+  case 3:
+    answer = "Low";
+    break;
+  case 4:
+  case 5:
+  case 6:
+    answer = "Mid";
+    break;
+  case 7:
+  case 8:
+  case 9:
+    answer = "High";
+    break;
+}
+  return answer;
+}
+
+sequentialSizes(1);
+
+// Ejercicio 79 "Replacing If Else Chains with Switch"
+
+function chainToSwitch(val) {
+  let answer = "";
+
+  switch(val){
+    case "bob":
+      answer = "Marley";
+      break;
+    case 42:
+      answer = "The Answer";
+      break;
+    case 1:
+      answer = "There is no #1";
+      break;
+    case 99:
+      answer = "Missed me by this much!";
+      break;
+    case 7:
+      answer = "Ate Nine";
+  }
+  return answer;
+}
+
+chainToSwitch(7);
+
+// Ejercicio 80 "Returning Boolean Values from Functions"
+
+function isLess(a, b) {
+  return a < b;
+}
+isLess(10, 15);
+
+// Ejercicio 81 "Return Early Pattern for Functions"
+
+function abTest(a, b) {
+
+ if (a < 0 || b < 0){
+   return undefined;
+ }
+  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
+
+abTest(2,2);
+
+// Ejercicio 82 "Counting Cards"
+
+let count = 0;
+
+function cc(card) {
+
+  switch (card) {
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      count++;
+      break;
+    case 10:
+    case "J":
+    case "Q":
+    case "K":
+    case "A":
+      count--;
+      break;
+  }
+  if (count > 0) {
+    return count + " Bet";
+  } else {
+    return count + " Hold";
+  }
+
+}
+
+cc(2); cc(3); cc(7); cc('K'); cc('A');
+
+// Ejercicio 83 "Build JavaScript Objects"
+
+const myDog = {
+
+  name: "Coco",
+  legs: 2,
+  tails: 1,
+  friends:["Jack", "Simon"]
+
+};
+
+// Ejercicio 84 "Accessing Object Properties with Dot Notation"
+
+const testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+
+const hatValue = testObj.hat;      
+const shirtValue = testObj.shirt;    
+
+// Ejercicio 85 "Accessing Object Properties with Bracket Notation"
+
+const testObj = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+
+const entreeValue = testObj["an entree"];   
+const drinkValue = testObj["the drink"];    
+
+// Ejercicio 86 "Accessing Object Properties with Variables"
+
+const testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+
+const playerNumber = 16;  
+const player = testObj[playerNumber];  
+
+// Ejercicio 87 "Updating Object Properties"
+
+const myDog = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+myDog.name = "Happy Coder";
+
+// Ejercicio 88 "Add New Properties to a JavaScript Object"
+
+const myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+myDog.bark = "Guau";
+
+// Ejercicio 89 "Delete Properties from a JavaScript Object"
+
+const myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+  "bark": "woof"
+};
+
+delete myDog.tails;
+
+// Ejercicio 90 "Using Objects for Lookups"
+
+function phoneticLookup(val) {
+  let result = "";
+
+var lookup = {
+  "alpha": "Adams",
+  "bravo": "Boston",
+  "charlie": "Chicago",
+  "delta": "Denver",
+  "echo": "Easy",
+  "foxtrot": "Frank",
+}
+
+result = lookup[val];
+
+  return result;
+}
+
+phoneticLookup("charlie");
+
+// Ejercicio 91 "Testing Objects for Properties"
+
+function checkObj(obj, checkProp) {
+  if (obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp];
+  } else {
+    return "Not Found";
+  }
+}
+
+// Ejercicio 92 "Manipulating Complex Objects"
+
+const myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  },
+  {
+    "artist": "Carlos Pereira Larrea",
+    "title": "Intiempo",
+    "release_year": 2022,
+    "formats":[
+      "CD",
+      "Digital",
+      "Platforms"
+    ]
+  }
+];
+
+// Ejercicio 93 "Accessing Nested Objects"
+
+const myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+const gloveBoxContents = myStorage.car.inside["glove box"];
+
+// Ejercicio 94 "Accessing Nested Arrays"
+
+const myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+
+const secondTree = myPlants[1].list[1];
+
+// Ejercicio 95 "Record Collection"
+
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+function updateRecords(records, id, prop, value) {
+  
+  if (value === ""){
+    delete records[id][prop];
+  }
+  else if(prop === "tracks"){
+    records[id][prop] = records[id][prop] || [];
+    records[id][prop].push(value);
+  }
+  else{
+    records[id][prop] = value;
+  }  
+  
+  return records;
+}
+
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
+// Ejercicio 95 "Iterate with JavaScript While Loops"
+
+const myArray = [];
+
+let i = 5;
+
+while (i >= 0){
+  myArray.push(i);
+  i--;
+}
+
+// Ejercicio 96 "Iterate with JavaScript For Loops"
+
+const myArray = [];
+
+for (let i=1; i <= 5; i++){
+  myArray.push(i);
+}
+
+// Ejercicio 97 "Iterate Odd Numbers With a For Loop"
+
+const myArray = [];
+
+for (let i = 1; i < 10; i+=2 ){
+  myArray.push(i);
+}
+
+// Ejercicio 98 "Count Backwards With a For Loop"
+
+const myArray = [];
+
+for(let i = 9; i > 0; i-= 2){
+  myArray.push(i);
+}
+
+// Ejercicio 99 "Iterate Through an Array with a For Loop"
+
+const myArr = [2, 3, 4, 5, 6];
+
+let total = 0;
+
+for(let i = 0; i < myArr.length; i++){
+  total += myArr[i];
+}
+
+// Ejercicio 100 "Nesting For Loops"
+
+function multiplyAll(arr) {
+  let product = 1;
+
+for(let i = 0; i < arr.length; i++){
+  for (let j = 0; j < arr[i].length; j++){
+    product *= arr[i][j];
+  }
+}
+
+  return product;
+}
+
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
+
+// Ejercicio 101 "Iterate with JavaScript Do...While Loops"
+
+const myArray = [];
+let i = 10;
+do {
+  myArray.push(i);
+  i++
+} 
+while (i < 11) {}
+
+// Ejercicio 102 "Replace Loops using Recursion"
+
+function sum(arr, n) {
+  if(n <= 0) {
+    return 0;
+  } else {
+    return sum(arr, n - 1) + arr[n - 1];
+  }
+}
+
+// Ejercicio 103 "Profile Lookup"
+
+const contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+
+function lookUpProfile(name, prop) {
+  for (let x = 0; x < contacts.length; x++) {
+    if (contacts[x].firstName === name) {
+      if (contacts[x].hasOwnProperty(prop)) {
+        return contacts[x][prop];
+      } else {
+        return "No such property";
+      }
+    }
+  }
+  return "No such contact";
+}
+
+// Ejercicio 104 "Generate Random Fractions with JavaScript"
+
+function randomFraction() {
+
+  return Math.random();
+
+}
+
+// Ejercicio 105 "Generate Random Whole Numbers with JavaScript"
+
+function randomWholeNum() {
+  return Math.floor(Math.random() * 10);
+}
+
+// Ejercicio 106 "Generate Random Whole Numbers within a Range"
+
+function randomRange(myMin, myMax) {
+
+  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+
+}
+
+// Ejercicio 107 "Use the parseInt Function"
+
+function convertToInteger(str) {
+  str = parseInt(str);
+  return str;
+}
+
+convertToInteger("56");
+
+// Ejercicio 108 "Use the parseInt Function with a Radix"
+
+function convertToInteger(str) {
+  str = parseInt(str, 2);
+  return str;
+}
+
+convertToInteger("10011");
+
+// Ejercicio 109 "Use the Conditional (Ternary) Operator"
+function checkEqual(a, b) {
+  return a === b ? "Equal" : "Not Equal";
+}
+
+checkEqual(1, 2);
+
+// Ejercicio 110 "Use Multiple Conditional (Ternary) Operators"
+
+function checkSign(num) {
+  return num > 0 ? "positive"
+  : num < 0 ? "negative"
+  : "zero";
+}
+
+checkSign(10);
+
+// Ejercicio 111 "Use Recursion to Create a Countdown"
+
+function countdown(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const arr = countdown(n - 1);
+    arr.unshift(n);
+    return arr;
+  }
+}
+
+// Ejercicio 112 "Use Recursion to Create a Range of Numbers"
+
+function rangeOfNumbers(startNum, endNum) {
+  return endNum < startNum
+    ? []
+    : rangeOfNumbers(startNum, endNum - 1).concat(endNum);
+}
+
+// Finished Basic JavaScript
